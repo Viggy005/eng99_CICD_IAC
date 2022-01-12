@@ -12,7 +12,11 @@
     2. ec2 in private_subnet as mongodb Database
 - JOB1 set up on Jenkins
 
-## Step 1: set-up Jenkins on aws ec2
+## Step 1: set-up Jenkins on aws ec2 and Set-up JOB1
 -       https://github.com/Viggy005/Jenkins_complete_automation
 - follow steps from above link to set-up jenkins server
-- follow along to create JOB1: web-hook, merge dev1 into main branch 
+- follow along to create JOB1: web-hook, merge dev1 into main branch
+
+## Step 2: set-up JOB2: terraform
+- install terraform plugin
+![](pics/jenkins_terraform_plugin.png)

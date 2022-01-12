@@ -20,3 +20,16 @@
 ## Step 2: set-up JOB2: terraform
 - install terraform plugin
 ![](pics/jenkins_terraform_plugin.png)
+![](pics/global_config.png)
+
+- add aws credentials:
+    - navigate to dashboard/configuration
+        - find the heading "Global properties"
+        - tick the box and write 3 env variables
+        ![](pics/jenkins/env.png)
+
+
+- jenkins job:
+![](pics/jenkins/job.png)
+
+    - run the job

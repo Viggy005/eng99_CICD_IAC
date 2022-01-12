@@ -33,3 +33,5 @@
 ![](pics/jenkins/job.png)
 
     - run the job and infra will be created
+
+# NOTE - need to set-up environment properly, main.tf needs correction.

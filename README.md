@@ -10,3 +10,4 @@
 - ansible to configure the instances
     1. ec2 in public_subnet as internet facing app
     2. ec2 in private_subnet as mongodb Database
+- JOB1 set up on Jenkins 

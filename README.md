@@ -10,4 +10,9 @@
 - ansible to configure the instances
     1. ec2 in public_subnet as internet facing app
     2. ec2 in private_subnet as mongodb Database
-- JOB1 set up on Jenkins 
+- JOB1 set up on Jenkins
+
+## Step 1: set-up Jenkins on aws ec2
+-       https://github.com/Viggy005/Jenkins_complete_automation
+- follow steps from above link to set-up jenkins server
+- follow along to create JOB1: web-hook, merge dev1 into main branch 

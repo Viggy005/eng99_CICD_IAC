@@ -32,4 +32,4 @@
 - jenkins job:
 ![](pics/jenkins/job.png)
 
-    - run the job
+    - run the job and infra will be created

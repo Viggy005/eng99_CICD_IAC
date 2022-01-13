@@ -69,6 +69,7 @@
 
 ## Result:
 - ec2 that was created by terraform is now configured to run NGINX by using ansible as a jenkins plug-in
+- usefull link: https://www.youtube.com/watch?v=PRpEbFZi7nI&t=329s
 
 # AMI of jenkins ec2 with terrafrom and ansible plug-in working:
 -           ami-0c26d41557518450d

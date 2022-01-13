@@ -46,10 +46,32 @@
 
 ![](pics/jenkins-ansible/ansible-install-script.png)
 
-- start jenkins pipeline job
+### step 2: global tool config
+![](pics/jenkins-ansible/global-tool-config.png)
 
-- generate declerative script
+### step 3: start jenkins pipeline job
+
+- we will be generating declerative scrips to configure the pipline
+![](pics/jenkins-ansible/click-declerative.png)
 ![](pics/jenkins-ansible/declerative-jenkins_script.png)
 
+
+#### ERROR Along the way
+
 ![](pics/jenkins-ansible/job-error.png)
+
+- we solve this by running the job once so that the working repo is available on the machine
+
+
+### Step 4: run the job: build the job
+
+![](pics/jenkins-ansible/result.png)
+
+## Result:
+- ec2 that was created by terraform is now configured to run NGINX by using ansible as a jenkins plug-in
+
+# AMI of jenkins ec2 with terrafrom and ansible plug-in working:
+-           ami-0c26d41557518450d
+
+
 

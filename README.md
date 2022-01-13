@@ -36,7 +36,20 @@
 
 # NOTE - need to set-up environment properly, main.tf needs correction.
 
-# Day 4: set up ansible on jenkins to configure the ec2 insatnces provisioned on aws: 
+# Day 4: set up ansible on jenkins to configure the ec2 instances provisioned on aws: 
 ## 3rd job to run ansible playbook/s to configure nodejs with reverse proxy on app instance
 
 - https://plugins.jenkins.io/ansible/
+
+### Step 1: SSH into jenkins Ec2
+![](pics/jenkins-ansible/ansible-installed-ec2.png)
+
+![](pics/jenkins-ansible/ansible-install-script.png)
+
+- start jenkins pipeline job
+
+- generate declerative script
+![](pics/jenkins-ansible/declerative-jenkins_script.png)
+
+![](pics/jenkins-ansible/job-error.png)
+

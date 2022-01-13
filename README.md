@@ -35,3 +35,8 @@
     - run the job and infra will be created
 
 # NOTE - need to set-up environment properly, main.tf needs correction.
+
+# Day 4: set up ansible on jenkins to configure the ec2 insatnces provisioned on aws: 
+## 3rd job to run ansible playbook/s to configure nodejs with reverse proxy on app instance
+
+- https://plugins.jenkins.io/ansible/

@@ -167,8 +167,12 @@ so we can run ansible playbook from jenkins(not best practice)
         - git init
         - git pull https://github.com/Viggy005/eng99_jenkins_terraform.git
         - edit .bashrc file for ip of db
+        - source ~/.bashrc
         - npm install & npm start
 
     # Note- still need to automate editing .bashrc for creation of correct environment variable & git hook trigger
+
+    # Jenkins machine AMI:
+    -           ami-0b2ee533c69cf8920
 
 

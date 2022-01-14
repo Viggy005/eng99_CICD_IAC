@@ -76,7 +76,7 @@
 -           ami-0c26d41557518450d
 
 # day 5
-## make app work without database connection:
+## set-up app:
 - ssh into jenkins ec2
 - cd /etc/ansible
 - create a provision script (sudo nano provsision.sh)
@@ -106,23 +106,23 @@ so we can run ansible playbook from jenkins(not best practice)
 
 # Note - the IP of webserver and Database Insatnces ahev to be updated in dev.inv file & provision.sh file in jenkins ec2 located at /etc/ansible
 
-# pipeline job script:
+### pipeline job script:
 ![](pics/jenkins-ansible/pipeline_script.png)
 
 - the only thing that is different with the last 3 stages is that we need to chage the name of the playbook to run
     - we generate the script using declerative pipeline syntax
     ![](pics/jenkins-ansible/pipeline-script-diff-playbook.png)
 
-# Git-hub Repo:
+### Git-hub Repo:
 ![](pics/jenkins-ansible/repo.png)
-## Playbooks (3 playbooks)
+#### Playbooks (3 playbooks)
 - Playbook to Install Nginx and set-up Reverse Proxy
     ![](pics/jenkins-ansible/nginx_playbook.png)
 - Playbook to Set up Internet facing app
     ![](pics/jenkins-ansible/setup_app_playbook.png)
 - Playbook to Set up Database
     ![](pics/jenkins-ansible/setup_db_playbook.png)
-## Inventory file(dev.inv)
+#### Inventory file(dev.inv)
 ![](pics/jenkins-ansible/inventory.png)
 
     

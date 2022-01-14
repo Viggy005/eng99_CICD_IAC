@@ -126,7 +126,11 @@ so we can run ansible playbook from jenkins(not best practice)
 ![](pics/jenkins-ansible/inventory.png)
 
     
-
+# Result: manually terminated both app&db instance on aws 
+- manually run terraform job to spin up Instances
+- manully edited dev.inv on github with IP's of newly spin up instances
+- manually edited /etc/ansible?provision.sh on jenkins ec2 with IP of database 
+- manually run the ansible job on jenkins
 
 
 

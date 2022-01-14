@@ -132,5 +132,43 @@ so we can run ansible playbook from jenkins(not best practice)
 - manually edited /etc/ansible?provision.sh on jenkins ec2 with IP of database 
 - manually run the ansible job on jenkins
 
+# create a job on jenkins to run a shell script at location /var/lib/jenkins/workspace/job2-terraform
+
+- we edit the main.tf to output the pulic ip of ec2 instances being created
+
+    ![](pics/jenkins-script/main_tf.png)
+
+- we set up a job on jenkins to run a script at location ../job2-terraform
+    ![](pics/jenkins-script/job.png)
+- the script we are running must be saved at location /var/lib/jenkins/workspace/job2-terraform on jenkins ec2
+    ![](pics/jenkins-script/script.png)
+
+- ssh into jenkins (give dev.inv correct permissions)
+    - naviagte to /var/lib/jenkins/workspace/ansible
+    - sudo chmod 777 dev.inv
+
+# attach jobs created in correct order
+- all are pipeline jobs not freestyle
+- we have 3 jobs
+- order of execution:
+    1.job2-terraform
+    2.run-script
+    3.ansible
+
+- To Trigger jobs:
+    ![](pics/jenkins-script/script-trigger.png)
+
+    ![](pics/jenkins-script/ansible-trigger.png)
+
+
+    # Result:
+    - once terraform job is started pipeline runs till ansile completion
+    - need to manually ssh into app instance created by terraform 
+        - git init
+        - git pull https://github.com/Viggy005/eng99_jenkins_terraform.git
+        - edit .bashrc file for ip of db
+        - npm install & npm start
+
+    # Note- still need to automate editing .bashrc for creation of correct environment variable
 
 

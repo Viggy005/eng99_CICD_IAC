@@ -64,6 +64,7 @@
 
 
 ### Step 4: run the job: build the job
+- dont forget to edit the playbook(.yml) and inventory(.inv) files on github to do perform desired tasks on specific instances 
 
 ![](pics/jenkins-ansible/result.png)
 

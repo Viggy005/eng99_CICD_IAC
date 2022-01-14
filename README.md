@@ -75,7 +75,7 @@
 # AMI of jenkins ec2 with terrafrom and ansible plug-in working:
 -           ami-0c26d41557518450d
 
-# day 5
+# day 5 (make app run with posts, figureout how to get IP from terraform job to Ansible Inventory file)
 ## set-up app:
 - ssh into jenkins ec2
 - cd /etc/ansible

@@ -169,6 +169,6 @@ so we can run ansible playbook from jenkins(not best practice)
         - edit .bashrc file for ip of db
         - npm install & npm start
 
-    # Note- still need to automate editing .bashrc for creation of correct environment variable
+    # Note- still need to automate editing .bashrc for creation of correct environment variable & git hook trigger
 
 

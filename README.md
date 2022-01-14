@@ -75,5 +75,58 @@
 # AMI of jenkins ec2 with terrafrom and ansible plug-in working:
 -           ami-0c26d41557518450d
 
+# day 5
+## make app work without database connection:
+- ssh into jenkins ec2
+- cd /etc/ansible
+- create a provision script (sudo nano provsision.sh)
+    ![](pics/jenkins-ansible/provision-app-script.png)
+
+- create a file called default at location /etc/ansible on the jenkins ec2
+    ![](pics/jenkins-ansible/default.png)
+
+- edit playbook on git hub:
+    ![](pics/jenkins-ansible/playbook-appsetup.png)
+
+- run the job on jenkins
+- ssh into app ec2
+- npm install & npm start
+
+## set-up database
+- launch database in public subnet
+so we can run ansible playbook from jenkins(not best practice)
+- create a file on git-hub called setup_db.yml
+
+- create a mongodb.conf file in jenkins ec2 at location /etc/ansible
+    ![](pics/jenkins-ansible/mongodb-conf-jenkins-ec2.png)
+- create a provision_update.sh file at location /etc/ansible on jnekins ec2
+    ![](pics/jenkins-ansible/provision-update.png)
+- edit the .inv file on git-hub to add hosts
+    ![](pics/jenkins-ansible/db_inv.png)
+
+# Note - the IP of webserver and Database Insatnces ahev to be updated in dev.inv file & provision.sh file in jenkins ec2 located at /etc/ansible
+
+# pipeline job script:
+![](pics/jenkins-ansible/pipeline_script.png)
+
+- the only thing that is different with the last 3 stages is that we need to chage the name of the playbook to run
+    - we generate the script using declerative pipeline syntax
+    ![](pics/jenkins-ansible/pipeline-script-diff-playbook.png)
+
+# Git-hub Repo:
+![](pics/jenkins-ansible/repo.png)
+## Playbooks (3 playbooks)
+- Playbook to Install Nginx and set-up Reverse Proxy
+    ![](pics/jenkins-ansible/nginx_playbook.png)
+- Playbook to Set up Internet facing app
+    ![](pics/jenkins-ansible/setup_app_playbook.png)
+- Playbook to Set up Database
+    ![](pics/jenkins-ansible/setup_db_playbook.png)
+## Inventory file(dev.inv)
+![](pics/jenkins-ansible/inventory.png)
+
+    
+
+
 
 

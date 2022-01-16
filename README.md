@@ -10,7 +10,8 @@
 - ansible to configure the instances
     1. ec2 in public_subnet as internet facing app
     2. ec2 in private_subnet as mongodb Database
-- JOB1 set up on Jenkins
+- Shell Script to capture IP's of newly created instances and update inventory file for ansible to work
+- Shell Script to update the provision file with ip of new database to set-up Environment variable properly in web app
 
 ## Step 1: set-up Jenkins on aws ec2 and Set-up JOB1
 -       https://github.com/Viggy005/Jenkins_complete_automation
@@ -174,5 +175,33 @@ so we can run ansible playbook from jenkins(not best practice)
 
     # Jenkins machine AMI:
     -           ami-0b2ee533c69cf8920
+
+
+# Automate the updation of Environment variable with latest database IP
+- ssh into jenkins instance
+    - create a script at location /var/lib/jenkins/workspace/job2-terraform called script_env.sh and give chmod permissions
+        ![](pics/jenkins-script/script-env.png)
+
+    - create a script file called env_proc.sh at location /var/lib/jenkins/workspace/job2-terraform and give chmod permissions
+
+- edit the run-script job in jenkins to run the newly created script
+    ![](pics/jenkins-script/script-env-job.png)
+
+- the new file script_env.sh at location /var/lib/jenkins/workspace/job2-terraform will have new content every time the script_env.sh is run
+    ![](pics/jenkins-script/env_proc.png)
+
+- edit the playbook apache.yml(used to set-up web facing app) at location /var/lib/jenkins/workspace/ansible
+    ![](pics/jenkins-script/playbook-env.png)
+
+# Result:
+    - once terraform job is started pipeline runs till ansile completion
+    - need to manually ssh into app instance created by terraform 
+        - git init
+        - git pull https://github.com/Viggy005/eng99_jenkins_terraform.git
+        
+        - npm install & npm start
+
+    - still need to set-up web-hook(have doubt)
+
 
 

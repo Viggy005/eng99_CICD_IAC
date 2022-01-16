@@ -194,14 +194,17 @@ so we can run ansible playbook from jenkins(not best practice)
     ![](pics/jenkins-script/playbook-env.png)
 
 # Result:
-    - once terraform job is started pipeline runs till ansile completion
+    - a git push to our documenatation repo starts the pipeline
+    - terraform job is started next to provsision 2 new ec2's of ubuntu 18.04
+    - run-script job is started next to make changes to some files with new values generated in terraform job
+    - ansible job is started next to configure webserver and database
     - need to manually ssh into app instance created by terraform 
         - git init
         - git pull https://github.com/Viggy005/eng99_jenkins_terraform.git
         
         - npm install & npm start
 
-    - still need to set-up web-hook(have doubt)
+    
 
 
 

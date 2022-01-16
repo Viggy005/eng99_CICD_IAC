@@ -204,6 +204,9 @@ so we can run ansible playbook from jenkins(not best practice)
         
         - npm install & npm start
 
+# Jenkins machine AMI:
+-       ami-04a404b12a65468f1
+
     
 
 
